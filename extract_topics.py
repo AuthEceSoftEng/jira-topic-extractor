@@ -1,7 +1,8 @@
 import pymongo
 from sklearn.feature_extraction.text import CountVectorizer
 from bertopic import BERTopic
-client = pymongo.MongoClient('mongodb://user:password@host:port/')
+from properties import database_host_and_port, model_save_folder
+client = pymongo.MongoClient(database_host_and_port)
 db = client["jidata"]
 vectorizer_model = CountVectorizer(stop_words="english")
 # Get all projects
@@ -26,4 +27,4 @@ for project in projects:
         except IndexError:
             continue
         # Save BERTopic model to disk
-        topic_model.save("PATH_TO_MODEL"+project + ".h5")
+        topic_model.save(model_save_folder+project + ".h5")
