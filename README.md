@@ -2,15 +2,15 @@
 Execution of BERTopic topic modeling technique on Jira data to train the necessary models and extract topics from issues of every project.
 
 ## Prerequisites
-The python requirements are available in file 'requirements.txt' and may be installed using the command 'pip install -r requirements.txt'. To execute BERTopic you must have set a MongoDB instance with the issues data. The necessary details must be set in file 'properties.py'.
+The python requirements are available in file `requirements.txt` and may be installed using the command `pip install -r requirements.txt`. To execute BERTopic you must have set a MongoDB instance with the issues data. The necessary details must be set in file `properties.py`.
 
 ## Execution Instructions
 
-To execute the topic extraction, all properties in 'properties.py' file must be set. After that, you can run 'python extract_topics.py' to perform the topicc generation. You can insert the extracted topics to the MongoDB instance by running 'python add_topics_to_db.py'
+To execute the topic extraction, all properties in `properties.py` file must be set. After that, you can run 'python extract_topics.py' to perform the topicc generation. You can insert the extracted topics to the MongoDB instance by running `python add_topics_to_db.py`
 
 ## Visualize Topics
 
-After the topic extraction, by running 'python visualize_topics.py', a  visualization of the topics extracted and the issues assigned to them can be produced for a selected project. The model of the selected project must be set in the 'properties.py' file.
+After the topic extraction, by running `python visualize_topics.py`, a  visualization of the topics extracted and the issues assigned to them can be produced for a selected project. The model of the selected project must be set in the `properties.py` file.
 
 Citation information
 --------------------
