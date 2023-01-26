@@ -1,5 +1,3 @@
-import json
-import codecs
 import pymongo
 from bertopic import BERTopic
 client = pymongo.MongoClient('mongodb://user:password@host:port/')
