@@ -1,12 +1,13 @@
 import pymongo
 from bertopic import BERTopic
-client = pymongo.MongoClient('mongodb://user:password@host:port/')
+from properties import database_host_and_port, model_save_folder
+client = pymongo.MongoClient(database_host_and_port)
 db = client["jidata"]
 projects = [project["key"] for project in db["projects"].find({}, {"key": 1})]
 for project in projects:
     #Load the BERTopic model for the corresponding project if exists
     try:
-    	topic_model = BERTopic.load("PATH_TO_MODEL"+project+".h5")
+    	topic_model = BERTopic.load(model_save_folder+project+".h5")
     except FileNotFoundError:    	
         continue
     # Get the issues of the project and their ids
