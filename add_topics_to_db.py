@@ -22,7 +22,7 @@ for project in projects:
         project_topics.pop(-1)
     except:
         pass
-    #create list to save each topic
+    #create list to save each topic of the project
     output=[]
     #store the necessary information for every topic
     for i in project_topics:
@@ -36,13 +36,13 @@ for project in projects:
         probs=topic_model.probabilities_
         #store topic probabilities for each issue
         for j in range(len(probs)):
-            #check if the probbility of the topic for the issue is above threshold
+            #check if the probability of the topic for the issue is above threshold
             if probs[j][i]>0.0000000001:
                 prob_record={}
                 prob_record['issue_id']=issue_ids[j]
                 prob_record['prob']=probs[j][i]
                 record['probabilities'].append(prob_record)
-        #add topic to the topics list
+        #add topic to the project topics list
         output.append(record)
     #insert project topics to DB
     db.topics.insert_many(output)
