@@ -10,4 +10,4 @@ for project in projects:
         # Get the texts of the issues (concatenation between the title and the description)
         issue_texts = [issue.get("summary", "") + " " + issue.get("description", "") for issue in issues]
 topic_model = BERTopic.load("PATH_TO_MODEL"+"FTPSERVER.h5")
-topic_model.visualize_documents(iss, hide_document_hover=True)
+topic_model.visualize_documents(issue_texts, hide_document_hover=True)
