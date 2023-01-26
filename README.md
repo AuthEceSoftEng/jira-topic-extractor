@@ -10,7 +10,7 @@ To execute the topic extraction, all properties in `properties.py` file must be 
 
 ## Visualize Topics
 
-After the topic extraction, by running `python visualize_topics.py`, a  visualization of the topics extracted and the issues assigned to them can be produced for a selected project. The model of the selected project must be set in the `properties.py` file.
+After the topic extraction, by running `python visualize_topics.py`, a  visualization of the topics extracted and the issues assigned to them can be produced for a selected project. The selected project must be set in the `properties.py` file.
 
 Citation information
 --------------------
