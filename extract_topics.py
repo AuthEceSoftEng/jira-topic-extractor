@@ -1,5 +1,3 @@
-import json
-import codecs
 import pymongo
 from sklearn.feature_extraction.text import CountVectorizer
 from bertopic import BERTopic
