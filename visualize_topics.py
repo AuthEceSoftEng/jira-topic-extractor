@@ -7,5 +7,5 @@ db = client["jidata"]
 issues = [issue for issue in db["issues"].find({"projectname": project_name}, {"summary": 1, "description": 1, "assignee": 1}).sort("_id")]
 # Get the texts of the issues (concatenation between the title and the description)
 issue_texts = [issue.get("summary", "") + " " + issue.get("description", "") for issue in issues]
-topic_model = BERTopic.load(model_save_folder+model_name+".h5")
+topic_model = BERTopic.load(model_save_folder+project_name+".h5")
 topic_model.visualize_documents(issue_texts, hide_document_hover=True)
