@@ -26,5 +26,5 @@ for project in projects:
         #if the model can not fit due to low number of issues continue to the next project
         except IndexError:
             continue
-        # Save BERTopic model to disk
+        # Save BERTopic model
         topic_model.save(model_save_folder+project + ".h5")
